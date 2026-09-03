@@ -1,0 +1,129 @@
+.auth-page {
+  min-height: 100vh;
+  background-color: #FAF8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 360px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 40px 32px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.auth-icon {
+  font-size: 36px;
+}
+
+.auth-card h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1C1C1C;
+  margin: 0;
+}
+
+.auth-card p {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.auth-card form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1C1C1C;
+}
+
+.form-group input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background-color: #FAF8F0;
+}
+
+.form-group input:focus {
+  border-color: #4A6741;
+}
+
+.auth-error {
+  color: #c0392b;
+  font-size: 13px;
+  margin: 0;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background-color: #4A6741;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.btn-primary:hover {
+  background-color: #3a5433;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  width: 100%;
+  padding: 12px;
+  background-color: transparent;
+  color: #4A6741;
+  border: 2px solid #4A6741;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background-color: #f0f4ee;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  color: #4A6741;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.btn-text:hover {
+  color: #3a5433;
+}
