@@ -19,7 +19,7 @@ describe('RecipeForm', () => {
         </Routes>
       </MemoryRouter>
     )
-    expect(screen.getByText('Create Recipe')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Create Recipe' })).toBeInTheDocument()
   })
 
   it('shows "Edit Recipe" heading in edit mode', () => {
@@ -41,7 +41,7 @@ describe('RecipeForm', () => {
         </Routes>
       </MemoryRouter>
     )
-    expect(screen.getByText('Edit Recipe')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Edit Recipe' })).toBeInTheDocument()
   })
 
   it('renders all required form fields', () => {

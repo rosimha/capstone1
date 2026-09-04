@@ -4,7 +4,7 @@ const router = express.Router();
 
 // Check https://ai.google.dev/gemini-api/docs/models for the current
 // recommended model if this one has been retired.
-const GEMINI_MODEL = 'gemini-2.0-flash';
+const GEMINI_MODEL = 'gemini-3.6-flash';
 
 router.post('/stream', async (req, res) => {
   const { prompt } = req.body;
