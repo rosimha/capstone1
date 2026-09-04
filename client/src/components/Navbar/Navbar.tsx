@@ -19,11 +19,11 @@ export default function Navbar() {
 
       <div className="navbar-links">
         <Link to="/recipes">Recipes</Link>
+        <Link to="/ai-assistant">AI Assistant</Link>
 
         {token ? (
           <>
             <Link to="/dashboard">Dashboard</Link>
-            <Link to="/ai-assistant">AI Assistant</Link>
             <button onClick={handleLogout}>Logout</button>
           </>
         ) : (

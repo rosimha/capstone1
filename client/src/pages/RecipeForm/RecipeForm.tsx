@@ -138,18 +138,18 @@ export default function RecipeForm() {
 
       <form onSubmit={handleSubmit} className="recipe-form">
         <div className="form-group">
-          <label>Title</label>
-          <input name="title" value={form.title} onChange={handleField} required />
+          <label htmlFor="title">Title</label>
+          <input id="title" name="title" value={form.title} onChange={handleField} required />
         </div>
 
         <div className="form-group">
-          <label>Image URL</label>
-          <input name="image" value={form.image} onChange={handleField} placeholder="https://..." />
+          <label htmlFor="image">Image URL</label>
+          <input id="image" name="image" value={form.image} onChange={handleField} placeholder="https://..." />
         </div>
 
         <div className="form-group">
-          <label>Description</label>
-          <textarea name="description" value={form.description} onChange={handleField} rows={3} />
+          <label htmlFor="description">Description</label>
+          <textarea id="description" name="description" value={form.description} onChange={handleField} rows={3} />
         </div>
 
         <div className="form-section">
@@ -160,11 +160,13 @@ export default function RecipeForm() {
                 placeholder="Name"
                 value={ing.name}
                 onChange={(e) => handleIngredient(i, 'name', e.target.value)}
+                required
               />
               <input
                 placeholder="Quantity"
                 value={ing.quantity}
                 onChange={(e) => handleIngredient(i, 'quantity', e.target.value)}
+                required
               />
               {form.ingredients.length > 1 && (
                 <button type="button" className="btn-remove" onClick={() => removeIngredient(i)}>
@@ -187,6 +189,7 @@ export default function RecipeForm() {
                 placeholder="Describe this step"
                 value={inst.description}
                 onChange={(e) => handleInstruction(i, e.target.value)}
+                required
               />
               {form.instructions.length > 1 && (
                 <button type="button" className="btn-remove" onClick={() => removeInstruction(i)}>
@@ -201,8 +204,9 @@ export default function RecipeForm() {
         </div>
 
         <div className="form-group">
-          <label>Tags</label>
+          <label htmlFor="tags">Tags</label>
           <input
+            id="tags"
             name="tags"
             value={form.tags}
             onChange={handleField}

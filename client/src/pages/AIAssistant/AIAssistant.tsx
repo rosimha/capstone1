@@ -66,9 +66,7 @@ export default function AIAssistant() {
               responseRef.current += text
               setStreamingResponse(responseRef.current)
             }
-          } catch {
-            // non-JSON SSE line, skip
-          }
+          } catch {}
         }
       }
 

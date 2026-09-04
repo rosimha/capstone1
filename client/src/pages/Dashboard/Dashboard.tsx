@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 import { useAuth } from '../../context/AuthContext'
 import { getAllRecipes, deleteRecipe } from '../../api/recipes'
 import RecipeCard from '../../components/RecipeCard/RecipeCard'
@@ -39,8 +40,15 @@ export default function Dashboard() {
     try {
       await deleteRecipe(id)
       setRecipes((prev) => prev.filter((r) => r._id !== id))
-    } catch {
-      setError('Failed to delete recipe.')
+    } catch (err) {
+      if (axios.isAxiosError(err) && err.response?.status === 404) {
+        setError('That recipe no longer exists.')
+        setRecipes((prev) => prev.filter((r) => r._id !== id))
+      } else if (axios.isAxiosError(err) && err.response?.status === 403) {
+        setError("You don't have permission to delete this recipe.")
+      } else {
+        setError('Failed to delete recipe.')
+      }
     }
   }
 
