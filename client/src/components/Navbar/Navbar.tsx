@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
+import logo from '../../assets/logo.svg'
 import './Navbar.css'
 
 export default function Navbar() {
@@ -14,7 +15,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <Link to="/" className="navbar-logo">
-        🥄 Spoonful
+        <img src={logo} alt="Spoonful" className="navbar-logo-img" />
       </Link>
 
       <div className="navbar-links">
