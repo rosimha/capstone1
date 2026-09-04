@@ -1,0 +1,106 @@
+.dashboard {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-size: 1.8rem;
+  color: #1C1C1C;
+}
+
+.btn-primary {
+  background-color: #4A6741;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #3a5332;
+}
+
+.dashboard-status {
+  color: #555;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.dashboard-status.error {
+  color: #c0392b;
+}
+
+.dashboard-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dashboard-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dashboard-card-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding-left: 0.25rem;
+}
+
+.dashboard-card-actions button {
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #1C1C1C;
+}
+
+.dashboard-card-actions button:hover {
+  background: #f0f0f0;
+}
+
+.btn-danger {
+  color: #c0392b !important;
+  border-color: #c0392b !important;
+}
+
+.btn-danger:hover {
+  background: #fdf0ee !important;
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 1.25rem 1rem;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+}
+
+@media (min-width: 640px) {
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}

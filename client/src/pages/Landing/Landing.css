@@ -75,3 +75,9 @@
 .btn-outline:hover {
   background-color: #f0f4ee;
 }
+
+@media (max-width: 480px) {
+  .landing-card {
+    padding: 36px 24px;
+  }
+}

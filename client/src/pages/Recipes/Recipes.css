@@ -51,3 +51,20 @@
 .status-text.error {
   color: #c0392b;
 }
+
+@media (min-width: 640px) {
+  .recipes-page {
+    padding: 32px 24px;
+    max-width: 700px;
+  }
+
+  .recipes-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .search-input {
+    width: 260px;
+  }
+}

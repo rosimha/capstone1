@@ -1,0 +1,135 @@
+.ai-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ai-header h1 {
+  font-size: 1.8rem;
+  color: #1C1C1C;
+  margin-bottom: 0.25rem;
+}
+
+.ai-header p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.ai-conversation {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-height: 120px;
+}
+
+.ai-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ai-bubble {
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  max-width: 90%;
+}
+
+.ai-bubble.user {
+  background: #4A6741;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 3px;
+}
+
+.ai-bubble.assistant {
+  background: white;
+  color: #1C1C1C;
+  align-self: flex-start;
+  border-bottom-left-radius: 3px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.ai-thinking {
+  color: #999;
+  font-style: italic;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.ai-error {
+  color: #c0392b;
+  font-size: 0.9rem;
+}
+
+.ai-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: sticky;
+  bottom: 1.5rem;
+}
+
+.ai-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: none;
+  background: white;
+  color: #1C1C1C;
+}
+
+.ai-form textarea:focus {
+  outline: none;
+  border-color: #4A6741;
+}
+
+.ai-form textarea:disabled {
+  background: #f5f5f5;
+  color: #999;
+}
+
+.ai-form button {
+  align-self: flex-end;
+  background-color: #4A6741;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.ai-form button:hover:not(:disabled) {
+  background-color: #3a5332;
+}
+
+.ai-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .ai-page {
+    padding: 1.25rem 1rem;
+  }
+
+  .ai-bubble {
+    max-width: 100%;
+  }
+
+  .ai-form button {
+    width: 100%;
+  }
+}
