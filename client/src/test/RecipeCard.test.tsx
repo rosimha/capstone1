@@ -45,4 +45,28 @@ describe('RecipeCard', () => {
     const img = screen.getByRole('img')
     expect(img).toHaveAttribute('src', expect.stringContaining('placehold'))
   })
+
+  it('does not render action icons when onEdit/onDelete are not provided', () => {
+    render(<MemoryRouter><RecipeCard recipe={recipe} /></MemoryRouter>)
+    expect(screen.queryByLabelText('Edit recipe')).not.toBeInTheDocument()
+    expect(screen.queryByLabelText('Delete recipe')).not.toBeInTheDocument()
+  })
+
+  it('calls onEdit without navigating when the edit icon is clicked', async () => {
+    const onEdit = vi.fn()
+    const user = userEvent.setup()
+    render(<MemoryRouter><RecipeCard recipe={recipe} onEdit={onEdit} /></MemoryRouter>)
+    await user.click(screen.getByLabelText('Edit recipe'))
+    expect(onEdit).toHaveBeenCalledWith('abc123')
+    expect(mockNavigate).not.toHaveBeenCalled()
+  })
+
+  it('calls onDelete without navigating when the delete icon is clicked', async () => {
+    const onDelete = vi.fn()
+    const user = userEvent.setup()
+    render(<MemoryRouter><RecipeCard recipe={recipe} onDelete={onDelete} /></MemoryRouter>)
+    await user.click(screen.getByLabelText('Delete recipe'))
+    expect(onDelete).toHaveBeenCalledWith('abc123')
+    expect(mockNavigate).not.toHaveBeenCalled()
+  })
 })

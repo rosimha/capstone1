@@ -36,9 +36,9 @@
 }
 
 .recipes-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
 .status-text {
@@ -55,7 +55,7 @@
 @media (min-width: 640px) {
   .recipes-page {
     padding: 32px 24px;
-    max-width: 700px;
+    max-width: 960px;
   }
 
   .recipes-header {
@@ -66,5 +66,15 @@
 
   .search-input {
     width: 260px;
+  }
+
+  .recipes-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .recipes-list {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

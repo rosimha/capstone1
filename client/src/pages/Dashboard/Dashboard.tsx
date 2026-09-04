@@ -70,17 +70,12 @@ export default function Dashboard() {
 
       <div className="dashboard-grid">
         {recipes.map((recipe) => (
-          <div key={recipe._id} className="dashboard-card-wrapper">
-            <RecipeCard recipe={recipe} />
-            <div className="dashboard-card-actions">
-              <button onClick={() => navigate(`/dashboard/edit/${recipe._id}`)}>
-                Edit
-              </button>
-              <button className="btn-danger" onClick={() => handleDelete(recipe._id)}>
-                Delete
-              </button>
-            </div>
-          </div>
+          <RecipeCard
+            key={recipe._id}
+            recipe={recipe}
+            onEdit={(id) => navigate(`/dashboard/edit/${id}`)}
+            onDelete={handleDelete}
+          />
         ))}
       </div>
     </div>
